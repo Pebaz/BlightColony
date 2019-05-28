@@ -1,0 +1,677 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/CreditsCamera.gd" type="Script" id=1]
+[ext_resource path="res://Resources/segoepr.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Resources/Images/ASSURANCE_1.PNG" type="Texture" id=3]
+[ext_resource path="res://Resources/Images/ASSURANCE_2.PNG" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 30
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="Theme" id=2]
+
+default_font = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 20
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[sub_resource type="Theme" id=4]
+
+default_font = SubResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+
+size = 20
+use_mipmaps = false
+use_filter = false
+extra_spacing_bottom = 21
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[sub_resource type="Theme" id=6]
+
+default_font = SubResource( 5 )
+
+[node name="Node" type="Node"]
+
+[node name="Camera2D" type="Camera2D" parent="." index="0"]
+
+position = Vector2( 646.44, -461.048 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+script = ExtResource( 1 )
+_sections_unfolded = [ "Editor" ]
+speed = 0.5
+
+[node name="ColorRect" type="ColorRect" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1561.0
+margin_top = -1554.0
+margin_right = 2425.0
+margin_bottom = 7739.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.130981, 0.385173, 0.453125, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="GORF101 Intro To Gorfatology" type="Label" parent="." index="2"]
+
+modulate = Color( 1, 0.796875, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 289.0
+margin_top = 56.0
+margin_right = 776.0
+margin_bottom = 109.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = SubResource( 2 )
+text = "GORF101: Intro To Gorfatology"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "Visibility" ]
+
+[node name="Scroll" type="Node2D" parent="." index="3"]
+
+position = Vector2( 289, 56 )
+
+[node name="Concept and Story" type="Label" parent="Scroll" index="0"]
+
+editor/display_folded = true
+self_modulate = Color( 1, 0.796078, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2.0
+margin_top = 182.0
+margin_right = 239.0
+margin_bottom = 235.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = SubResource( 4 )
+text = "CONCEPT AND STORY"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "Visibility", "custom_styles" ]
+
+[node name="Samuel Wilder" type="Label" parent="Scroll/Concept and Story" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 136.0
+margin_top = 70.0
+margin_right = 342.0
+margin_bottom = 123.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = SubResource( 4 )
+text = "Samuel Wilder"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[node name="Sound Effects" type="Label" parent="Scroll" index="1"]
+
+editor/display_folded = true
+self_modulate = Color( 1, 0.796078, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -25.0
+margin_top = 433.0
+margin_right = 210.0
+margin_bottom = 486.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = SubResource( 4 )
+text = "SOUND EFFECTS"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Scroll/Sound Effects" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 123.0
+margin_top = 67.0
+margin_right = 399.0
+margin_bottom = 255.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="Mark DiAngelo" type="Label" parent="Scroll/Sound Effects/VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 276.0
+margin_bottom = 35.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = SubResource( 4 )
+text = "Mark DiAngelo"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[node name="JaBa" type="Label" parent="Scroll/Sound Effects/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 39.0
+margin_right = 276.0
+margin_bottom = 74.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = SubResource( 4 )
+text = "JaBa"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[node name="Mike Koenig" type="Label" parent="Scroll/Sound Effects/VBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 78.0
+margin_right = 276.0
+margin_bottom = 113.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = SubResource( 4 )
+text = "Mike Koenig"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[node name="Brian Rocca" type="Label" parent="Scroll/Sound Effects/VBoxContainer" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 117.0
+margin_right = 276.0
+margin_bottom = 152.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = SubResource( 4 )
+text = "Brian Rocca"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[node name="Music" type="Label" parent="Scroll" index="2"]
+
+editor/display_folded = true
+self_modulate = Color( 1, 0.796078, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -96.0
+margin_top = 775.0
+margin_right = 180.0
+margin_bottom = 814.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = SubResource( 4 )
+text = "MUSIC"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[node name="Piffle Poffle" type="Label" parent="Scroll/Music" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 189.0
+margin_top = 50.0
+margin_right = 505.0
+margin_bottom = 103.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = SubResource( 4 )
+text = "\"Piffle Poffle\" -> Samuel Wilder"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[node name="Level Design" type="Label" parent="Scroll" index="3"]
+
+editor/display_folded = true
+self_modulate = Color( 1, 0.796078, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -52.0
+margin_top = 1021.0
+margin_right = 224.0
+margin_bottom = 1060.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = SubResource( 4 )
+text = "LEVEL DESIGN"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[node name="Samuel Wilder" type="Label" parent="Scroll/Level Design" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 128.0
+margin_top = 50.0
+margin_right = 444.0
+margin_bottom = 103.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = SubResource( 4 )
+text = "Samuel Wilder"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[node name="Special Thanks" type="Label" parent="Scroll" index="4"]
+
+editor/display_folded = true
+self_modulate = Color( 1, 0.796078, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -52.0
+margin_top = 1735.0
+margin_right = 224.0
+margin_bottom = 1774.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = SubResource( 4 )
+text = "SPECIAL THANKS"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[node name="Godot Engine" type="Label" parent="Scroll/Special Thanks" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 114.0
+margin_top = 50.0
+margin_right = 486.0
+margin_bottom = 123.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = SubResource( 4 )
+text = "Godot Engine Team: For making an amazing and easy-to-use editor"
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[node name="Tools Used" type="Label" parent="Scroll" index="5"]
+
+self_modulate = Color( 1, 0.796078, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -52.0
+margin_top = 1272.0
+margin_right = 224.0
+margin_bottom = 1311.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = SubResource( 4 )
+text = "TOOLS USED"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[node name="Godot Engine" type="Label" parent="Scroll/Tools Used" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 56.0
+margin_top = 150.0
+margin_right = 553.0
+margin_bottom = 223.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = SubResource( 4 )
+text = "Godot Game Engine
+-> Fantastic Editor and Loaded with Features"
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[node name="Visual Studio Code" type="Label" parent="Scroll/Tools Used" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 100.0
+margin_top = 46.0
+margin_right = 507.0
+margin_bottom = 127.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = SubResource( 4 )
+text = "Visual Studio Code
+-> Amazing TSCN and GD extensions"
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[node name="Visual Studio Code2" type="Label" parent="Scroll/Tools Used" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 138.0
+margin_top = 249.0
+margin_right = 460.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = SubResource( 4 )
+text = "GNU Image Manipulation Tool
+-> Best Free Image Editor"
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[node name="Afterward" type="Label" parent="Scroll" index="6"]
+
+self_modulate = Color( 1, 0.796078, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -52.0
+margin_top = 2043.0
+margin_right = 224.0
+margin_bottom = 2082.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = SubResource( 4 )
+text = "AFTERWARD"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[node name="Samuel Wilder" type="Label" parent="Scroll/Afterward" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 12.0
+margin_top = 118.0
+margin_right = 616.0
+margin_bottom = 292.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = SubResource( 6 )
+text = "I had alot of fun working on this project.  I initially wanted to remake one of my old games called \"Assurance\" but the very title of that game is a joke."
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[node name="Samuel Wilder2" type="Label" parent="Scroll/Afterward" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 12.0
+margin_top = 726.0
+margin_right = 616.0
+margin_bottom = 1136.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = SubResource( 6 )
+text = "I made Assurance in 3 days from start-to-finish one weekend a couple years ago and always wished I would have spent more time on it.  Once I discovered the power of Godot and how you could produce content at a much faster speed than Unity, I made the decision to make GORF101.  The reason for this game's title: GORF101 was because I was in college when I created it."
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[node name="ASSURANCE_1" type="Sprite" parent="." index="4"]
+
+position = Vector2( 551.567, 2588.25 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 3 )
+offset = Vector2( 0, 1 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="ASSURANCE_2" type="Sprite" parent="." index="5"]
+
+position = Vector2( 557.876, 3449.47 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 4 )
+offset = Vector2( 1, 0 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+

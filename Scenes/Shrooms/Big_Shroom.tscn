@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/BigBlueShroom.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Images/Mush_Muscle.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Hands.gd" type="Script" id=3]
+[ext_resource path="res://Resources/Images/Hand.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/ShroomHealth.tscn" type="PackedScene" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[node name="Big_Shroom" type="KinematicBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+speed = 50
+
+[node name="Mush_Muscle" type="Sprite" parent="." index="0"]
+
+position = Vector2( -1.82756, -14.7815 )
+z_index = 3
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Hands" type="Node2D" parent="Mush_Muscle" index="0"]
+
+script = ExtResource( 3 )
+
+[node name="Tween UP" type="Tween" parent="Mush_Muscle/Hands" index="0"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="Tween DOWN" type="Tween" parent="Mush_Muscle/Hands" index="1"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="Right Hand" type="Sprite" parent="Mush_Muscle/Hands" index="2"]
+
+position = Vector2( -55.5171, 44.0859 )
+z_index = 4
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Left Hand" type="Sprite" parent="Mush_Muscle/Hands" index="3"]
+
+position = Vector2( 53.5865, 44.0859 )
+z_index = 4
+texture = ExtResource( 4 )
+flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+visible = false
+scale = Vector2( 5.90635, 5.90635 )
+shape = SubResource( 1 )
+
+[node name="Health" parent="." index="2" instance=ExtResource( 5 )]
+
+position = Vector2( -10, 50 )
+hit_points = 175
+
+[connection signal="ground_pound" from="." to="Mush_Muscle/Hands" method="_on_Big_Shroom_ground_pound"]
+
+[connection signal="tween_completed" from="Mush_Muscle/Hands/Tween UP" to="Mush_Muscle/Hands" method="_on_Tween_UP_tween_completed"]
+
+[connection signal="tween_completed" from="Mush_Muscle/Hands/Tween DOWN" to="Mush_Muscle/Hands" method="_on_Tween_DOWN_tween_completed"]
+
+

@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Bullet.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Images/Lyrium_Blast_Small.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/SelfDestructTimer.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 4
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+speed = 1100
+hit_points = 1
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+scale = Vector2( 4, 4 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+visible = false
+scale = Vector2( 1.39872, 1.39872 )
+shape = SubResource( 1 )
+
+[node name="SelfDestruct" parent="." index="2" instance=ExtResource( 3 )]
+
+wait_time = 40.0
+
+

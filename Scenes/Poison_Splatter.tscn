@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/PoisonSplatter.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Images/Poison_Radial_3.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/SelfDestructVisual.vs" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 52.5912
+
+[node name="I Can Run Into People" type="Area2D"]
+
+input_pickable = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 512
+collision_mask = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "collision" ]
+
+[node name="My Bumper" type="CollisionShape2D" parent="." index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Timer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 10.0
+one_shot = false
+autostart = true
+script = ExtResource( 3 )
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]
+
+

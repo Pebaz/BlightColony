@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/Images/Lyrium_Smoke2.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Die.gd" type="Script" id=2]
+
+[node name="Sprite" type="Sprite" index="0"]
+
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+target_scale = Vector2( 5, 5 )
+
+[node name="Tween" type="Tween" parent="." index="0"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+_sections_unfolded = [ "playback" ]
+
+[node name="Timer" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+

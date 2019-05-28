@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Blop.wav-bea99ae59b3d8dd5297f5db84900d23c.sample"
+
+[deps]
+
+source_file="res://Resources/Sound/Blop.wav"
+dest_files=[ "res://.import/Blop.wav-bea99ae59b3d8dd5297f5db84900d23c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

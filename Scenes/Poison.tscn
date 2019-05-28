@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Bullet.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Images/Poison_1.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 14.4412
+
+[node name="I Can Run Into People" type="KinematicBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 512
+collision_mask = 8
+collision/safe_margin = 0.001
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "collision" ]
+speed = 150
+hit_points = 1
+
+[node name="My Bumper" type="CollisionShape2D" parent="." index="0"]
+
+visible = false
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+scale = Vector2( 4, 4 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+

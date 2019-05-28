@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Piffle_Poffle.wav-2eb7f8b085c213ac619ca1aa1a1b7e5d.sample"
+
+[deps]
+
+source_file="res://Resources/Music/Piffle_Poffle.wav"
+dest_files=[ "res://.import/Piffle_Poffle.wav-2eb7f8b085c213ac619ca1aa1a1b7e5d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

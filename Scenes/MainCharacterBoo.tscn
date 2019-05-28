@@ -1,0 +1,139 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/Nodibu.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Images/Nodibu_Sprite_Sheet.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Images/Arrow.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Projectiles.gd" type="Script" id=4]
+[ext_resource path="res://Resources/Images/Lyrium_Blast_Small.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/MouseCursor.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/ShroomHealth.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/PlayerHealth.gd" type="Script" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 7.18757, 7.72612 )
+
+[node name="Billy" type="KinematicBody2D" index="0" groups=[
+"Player",
+]]
+
+position = Vector2( 62.827, -25.4145 )
+input_pickable = false
+collision_layer = 8
+collision_mask = 513
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+move_speed = 200
+
+[node name="Nodibu" type="Sprite" parent="." index="0"]
+
+scale = Vector2( 4, 4 )
+z_index = 1
+texture = ExtResource( 2 )
+vframes = 8
+hframes = 2
+_sections_unfolded = [ "Animation" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+visible = false
+position = Vector2( -0.700642, 3.60075 )
+scale = Vector2( 1.73527, 1.85127 )
+shape = SubResource( 1 )
+
+[node name="Arrow" type="Line2D" parent="." index="2"]
+
+points = PoolVector2Array( 0, 0, 0, 0 )
+width = 10.0
+default_color = Color( 0, 0.671875, 1, 1 )
+texture = ExtResource( 3 )
+texture_mode = 1
+sharp_limit = 2.0
+round_precision = 8
+_sections_unfolded = [ "Fill" ]
+
+[node name="Timer - Animation" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = false
+autostart = true
+
+[node name="Timer - Projectile Small" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 0.05
+one_shot = false
+autostart = true
+
+[node name="Timer - Projectile Medium" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 0.15
+one_shot = false
+autostart = true
+
+[node name="Timer - Projectile Large" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="." index="7"]
+
+scale = Vector2( 0.51316, 0.550988 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 0.7, 0.7 )
+limit_left = -10000
+limit_top = -10000
+limit_right = 10000
+limit_bottom = 10000
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 4.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+editor_draw_screen = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
+script = ExtResource( 4 )
+_sections_unfolded = [ "Editor", "Z Index" ]
+selected_attack = 0
+
+[node name="Mouse Cursor" type="Sprite" parent="Camera2D" index="0"]
+
+position = Vector2( 75.7391, 54.3016 )
+scale = Vector2( 4, 4 )
+z_index = 10
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Health" parent="." index="8" instance=ExtResource( 7 )]
+
+position = Vector2( -0.169651, 34.7502 )
+script = ExtResource( 8 )
+hit_points = 1000
+
+[connection signal="timeout" from="Timer - Animation" to="." method="_on_Timer_timeout"]
+
+[connection signal="timeout" from="Timer - Projectile Small" to="Camera2D" method="_on_timer_small"]
+
+[connection signal="timeout" from="Timer - Projectile Medium" to="Camera2D" method="_on_timer_medium"]
+
+[connection signal="timeout" from="Timer - Projectile Large" to="Camera2D" method="_on_timer_large"]
+
+[connection signal="update_cursor" from="Camera2D" to="Camera2D/Mouse Cursor" method="_on_udpate_cursor"]
+
+

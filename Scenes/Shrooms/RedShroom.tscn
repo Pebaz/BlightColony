@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/RedShroom.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Images/Mush_Ranged.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/ShroomHealth.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 15.234
+
+[node name="RedShroom" type="KinematicBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+speed = 100
+
+[node name="Mushroom_Red" type="Sprite" parent="." index="0"]
+
+position = Vector2( 2.12579, -5.75398 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+visible = false
+position = Vector2( 0, 7.22995 )
+shape = SubResource( 1 )
+
+[node name="Health" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 0, 30 )
+hit_points = 3
+
+[node name="Timer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+

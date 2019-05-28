@@ -1,0 +1,170 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/Dead Scene.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Sound Library.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resources/Images/Died.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/DieScreenButtons.gd" type="Script" id=4]
+[ext_resource path="res://Resources/Images/Main Menu.png" type="Texture" id=5]
+[ext_resource path="res://Resources/Images/Play Again.png" type="Texture" id=6]
+[ext_resource path="res://Resources/segoepr.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Scripts/DeadScreenScore.gd" type="Script" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 45
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 7 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="Theme" id=2]
+
+default_font = SubResource( 1 )
+
+[node name="Dead Scene" type="Node"]
+
+script = ExtResource( 1 )
+
+[node name="Sound Library" parent="." index="0" instance=ExtResource( 2 )]
+
+[node name="ColorRect3" type="ColorRect" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1695.0
+margin_top = -993.0
+margin_right = 2716.0
+margin_bottom = 1593.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.172549, 0.352941, 0.172549, 1 )
+
+[node name="Died" type="Sprite" parent="ColorRect3" index="0"]
+
+position = Vector2( 2196.93, 1194.33 )
+scale = Vector2( 0.829672, 0.829672 )
+texture = ExtResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="ColorRect3" index="1"]
+
+position = Vector2( 2204.99, 1292.81 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+
+[node name="ColorRect2" type="ColorRect" parent="." index="2"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 507.0
+margin_top = 357.0
+margin_right = 794.0
+margin_bottom = 406.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.0941176, 0.247059, 0.537255, 1 )
+script = ExtResource( 4 )
+is_main_menu_button = true
+my_color = Color( 0.0941176, 0.247059, 0.537255, 1 )
+my_other_color = Color( 0.227451, 0.447059, 0.619608, 1 )
+
+[node name="Main Menu" type="Sprite" parent="ColorRect2" index="0"]
+
+position = Vector2( 144.553, 24.8127 )
+scale = Vector2( 0.864533, 0.864533 )
+texture = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="." index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 168.13
+margin_top = 359.609
+margin_right = 424.13
+margin_bottom = 405.609
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.0941176, 0.247059, 0.537255, 1 )
+script = ExtResource( 4 )
+is_main_menu_button = false
+my_color = Color( 0.0941176, 0.247059, 0.537255, 1 )
+my_other_color = Color( 0.227451, 0.447059, 0.619608, 1 )
+
+[node name="Play Again" type="Sprite" parent="ColorRect" index="0"]
+
+position = Vector2( 130.205, 24.1793 )
+scale = Vector2( 0.872987, 0.872987 )
+texture = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="." index="4"]
+
+modulate = Color( 0.992188, 0.604614, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 384.0
+margin_top = 459.0
+margin_right = 558.0
+margin_bottom = 520.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = SubResource( 2 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 8 )
+_sections_unfolded = [ "Theme", "Visibility" ]
+
+[connection signal="mouse_entered" from="ColorRect2" to="ColorRect2" method="_on_ColorRect_mouse_entered"]
+
+[connection signal="mouse_exited" from="ColorRect2" to="ColorRect2" method="_on_ColorRect_mouse_exited"]
+
+[connection signal="mouse_entered" from="ColorRect" to="ColorRect" method="_on_ColorRect_mouse_entered"]
+
+[connection signal="mouse_exited" from="ColorRect" to="ColorRect" method="_on_ColorRect_mouse_exited"]
+
+

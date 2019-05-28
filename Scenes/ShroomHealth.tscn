@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Health.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/HealthBar.gd" type="Script" id=2]
+
+[node name="Health" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+hit_points = 10
+
+[node name="Health Bar Base" type="ColorRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_right = 20.0
+margin_bottom = 4.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 1, 1, 1, 0.629843 )
+
+[node name="Health Bar" type="ColorRect" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_right = 20.0
+margin_bottom = 4.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.992188, 0, 0, 0.756902 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Rect" ]
+
+[connection signal="got_shot" from="." to="Health Bar" method="_update_health"]
+
+
